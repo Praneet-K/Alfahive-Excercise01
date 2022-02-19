@@ -19,6 +19,7 @@ class Display extends Component{
             })
     }
     render(){
+        console.log(this.state.EmpD)
         return (
             <>
                 <table>
@@ -27,6 +28,7 @@ class Display extends Component{
                         <th>FirstName</th>
                         <th>LastName</th>
                         <th>PhoneNumber</th>
+                        <th>Email Id</th>
                         <th>Address</th></tr>
                     </thead>
                     <tbody>
@@ -34,6 +36,7 @@ class Display extends Component{
                                 <td>{x.firstName}</td>
                                 <td>{x.lastName}</td>
                                 <td>{x.phno}</td>
+                                <td>{x.emailId}</td>
                                 <td>{`${x.address} , ${x.city} , ${x.state} , ${x.country}`}</td>
                                 </tr>)}
                     </tbody>

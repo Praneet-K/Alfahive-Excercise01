@@ -18,13 +18,14 @@ class App extends Component{
     // headers.append({'Content-Type' : 'application/json'})
     const options = {method:'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: x.id,firstName : x.FirstName,
-      lastName:x.LastName,
-      phno:x.Phno,
-      address:x.Address,
-      city:x.City,
-      state:x.State,
-      country:x.Country}),
+      body: JSON.stringify({ id: x.id,firstName : x.firstName,
+      lastName:x.lastName,
+      phno:x.phoneNumber,
+      emailId:x.emailId,
+      address:x.address,
+      city:x.city,
+      state:x.state,
+      country:x.country}),
     }
     fetch(url,options)
         .then(response => console.log(response))

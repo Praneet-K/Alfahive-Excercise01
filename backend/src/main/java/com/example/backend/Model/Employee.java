@@ -9,142 +9,158 @@ public class Employee {
     private Long id;
     
 
-    private String FirstName;
-    private String LastName;
-    private String Phno;
-    private String Address;
-    private String City;
-    private String State;
-    private String Country;
+    private String firstName;
+    private String lastName;
+    private String phno;
+    private String emailId;
+    private String address;
+    private String city;
+    private String state;
+    private String country;
+
 
     public Employee() {
     }
 
-    public Employee(long id, String FirstName, String LastName, String Phno, String Address, String City, String State, String Country) {
-        super();
+    public Employee(Long id, String firstName, String lastName, String phno, String emailId, String address, String city, String state, String country) {
         this.id = id;
-        this.FirstName = FirstName;
-        this.LastName = LastName;
-        this.Phno = Phno;
-        this.Address = Address;
-        this.City = City;
-        this.State = State;
-        this.Country = Country;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phno = phno;
+        this.emailId = emailId;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.country = country;
     }
+        
 
+
+
+    /**
+     * @return Long return the id
+     */
     public Long getId() {
-        return this.id;
+        return id;
     }
 
+    /**
+     * @param id the id to set
+     */
     public void setId(Long id) {
         this.id = id;
     }
-    
 
     /**
-     * @return String return the FirstName
+     * @return String return the firstName
      */
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     /**
-     * @param FirstName the FirstName to set
+     * @param firstName the firstName to set
      */
-    public void setFirstName(String FirstName) {
-        this.FirstName = FirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     /**
-     * @return String return the LastName
+     * @return String return the lastName
      */
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     /**
-     * @param LastName the LastName to set
+     * @param lastName the lastName to set
      */
-    public void setLastName(String LastName) {
-        this.LastName = LastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     /**
-     * @return String return the Phno
+     * @return String return the phno
      */
     public String getPhno() {
-        return Phno;
+        return phno;
     }
 
     /**
-     * @param Phno the Phno to set
+     * @param phno the phno to set
      */
-    public void setPhno(String Phno) {
-        this.Phno = Phno;
+    public void setPhno(String phno) {
+        this.phno = phno;
     }
 
     /**
-     * @return String return the Address
+     * @return String return the emailId
+     */
+    public String getEmailId() {
+        return emailId;
+    }
+
+    /**
+     * @param emailId the emailId to set
+     */
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    /**
+     * @return String return the address
      */
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     /**
-     * @param Address the Address to set
+     * @param address the address to set
      */
-    public void setAddress(String Address) {
-        this.Address = Address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     /**
-     * @return String return the City
+     * @return String return the city
      */
     public String getCity() {
-        return City;
+        return city;
     }
 
     /**
-     * @param City the City to set
+     * @param city the city to set
      */
-    public void setCity(String City) {
-        this.City = City;
+    public void setCity(String city) {
+        this.city = city;
     }
 
     /**
-     * @return String return the State
+     * @return String return the state
      */
     public String getState() {
-        return State;
+        return state;
     }
 
     /**
-     * @param State the State to set
+     * @param state the state to set
      */
-    public void setState(String State) {
-        this.State = State;
+    public void setState(String state) {
+        this.state = state;
     }
 
     /**
-     * @return String return the Country
+     * @return String return the country
      */
     public String getCountry() {
-        return Country;
+        return country;
     }
 
     /**
-     * @param Country the Country to set
+     * @param country the country to set
      */
-    public void setCountry(String Country) {
-        this.Country = Country;
-    }
-
-    @Override
-    public String toString() {
-        return "{" +
-            " FirstName='" + getFirstName() + "'" +
-            ", LastName='" + getLastName() + "'" +
-            "}";
+    public void setCountry(String country) {
+        this.country = country;
     }
 
 }
