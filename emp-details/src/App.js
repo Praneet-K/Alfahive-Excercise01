@@ -21,10 +21,12 @@ class App extends Component{
       <Router>
         <div className="App">
           <Nav />
+          <div className='container'>
           <Routes>
             <Route path = '/' exact element={<Form parentCallBack={this.handleCallBack}/>} />
             <Route path = '/display' element = {<Display/>} />
           </Routes>
+          </div>
         </div>
       </Router>
       </>

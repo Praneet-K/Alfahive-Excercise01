@@ -22,7 +22,7 @@ class Display extends Component{
         console.log(this.state.EmpD)
         return (
             <>
-                <table>
+                <table className='table table-hover'>
                     <thead>
                         <tr>
                         <th>FirstName</th>

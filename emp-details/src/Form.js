@@ -95,7 +95,7 @@ class Form extends Component {
             <form onSubmit={this.handleSubmit}>
                 <fieldset>
                     <legend>Employee Details</legend>
-                    <table>
+                    <table className='text-center table'>
                         <tbody>
                             <InputRow item = 'Id' type = 'number' required = 'true' parentCallBack={this.handleCallBack}/>
                             <InputRow item = 'firstName' type = 'text' required = 'true' parentCallBack={this.handleCallBack}/>
