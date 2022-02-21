@@ -25,7 +25,7 @@ public class EmployeeServiceImp implements EmployeeService{
     public ResponseEntity<String> saveEmployee(Employee employee) {
         if(employee.getId()==null)
             return new ResponseEntity<String>("Id cannot be null", HttpStatus.BAD_REQUEST);
-        if(employee.getFirstName()==null)
+        if((employee.getFirstName()==null)||(employee.getFirstName()==""))
             return new ResponseEntity<String>("First cannot be null", HttpStatus.BAD_REQUEST);
         if(employee.getPhno()==null)
             return new ResponseEntity<String>("Phone Number cannot be null", HttpStatus.BAD_REQUEST);

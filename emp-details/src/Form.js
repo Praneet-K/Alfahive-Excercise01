@@ -15,6 +15,7 @@ class Form extends Component {
              city : '',
              state: '',
              country : '',
+             msg : '',
         };
     }
     handleCallBack = (y,x) => {
@@ -60,13 +61,32 @@ class Form extends Component {
         // console.log(this.state)
     }
     handleSubmit = (event) => {
-        this.setState({
-            
+        var url = "http://localhost:8080/api/saveemp";
+        // headers.append({'Content-Type' : 'application/json'})
+        const options = {method:'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: this.state.id,firstName : this.state.firstName,
+        lastName:this.state.lastName,
+        phno:this.state.phoneNumber,
+        emailId:this.state.emailId,
+        address:this.state.address,
+        city:this.state.city,
+        state:this.state.state,
+        country:this.state.country}),
+    }
+    
+    fetch(url,options)
+        .then(response => response.text()).then((data) =>{
+            this.setState({
+                msg:data,
+            })
+        }).catch(error => {
+            console.log(error)
+            this.setState({
+                msg : 'Server Error',
+            })
         })
-        alert(`Hi ${this.state.firstName} ${this.state.lastName} is added`)
-
-        this.props.parentCallBack(this.state)
-        
+        // alert(`Hi ${this.state.firstName} ${this.state.lastName} is added`)        
         event.preventDefault()
     }
     render() {
@@ -91,6 +111,7 @@ class Form extends Component {
                 </fieldset>
                 <input type = 'submit' />
             </form>
+            <div>{this.state.msg}</div>
             </>
         )
     }

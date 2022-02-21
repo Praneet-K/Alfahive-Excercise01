@@ -24,7 +24,7 @@ export class InputRow extends Component {
                 <input id = {this.props.item}
                 type = {this.props.type} 
                 placeholder={this.props.item}
-                value={this.state.val} required={this.props.required}
+                value={this.state.val}
                 onChange={this.handleChange} />
             </td>
         </tr>
