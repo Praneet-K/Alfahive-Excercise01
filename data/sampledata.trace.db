@@ -1,9 +1,0 @@
-2022-02-21 12:42:21 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EMPLOYEE" not found; SQL statement:
-select employee0_.id as id1_0_0_, employee0_.address as address2_0_0_, employee0_.city as city3_0_0_, employee0_.country as country4_0_0_, employee0_.email_id as email_id5_0_0_, employee0_.first_name as first_na6_0_0_, employee0_.last_name as last_nam7_0_0_, employee0_.phno as phno8_0_0_, employee0_.state as state9_0_0_ from employee employee0_ where employee0_.id=? [42102-200]
-2022-02-21 12:42:38 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EMPLOYEE" not found; SQL statement:
-select employee0_.id as id1_0_, employee0_.address as address2_0_, employee0_.city as city3_0_, employee0_.country as country4_0_, employee0_.email_id as email_id5_0_, employee0_.first_name as first_na6_0_, employee0_.last_name as last_nam7_0_, employee0_.phno as phno8_0_, employee0_.state as state9_0_ from employee employee0_ [42102-200]
-2022-02-21 12:43:00 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EMPLOYEE" not found; SQL statement:
-select employee0_.id as id1_0_, employee0_.address as address2_0_, employee0_.city as city3_0_, employee0_.country as country4_0_, employee0_.email_id as email_id5_0_, employee0_.first_name as first_na6_0_, employee0_.last_name as last_nam7_0_, employee0_.phno as phno8_0_, employee0_.state as state9_0_ from employee employee0_ [42102-200]

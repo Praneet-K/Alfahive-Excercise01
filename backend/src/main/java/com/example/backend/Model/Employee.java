@@ -3,7 +3,20 @@ package com.example.backend.Model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+
+
 @Entity
+@Getter
+@Setter
+@ToString
+
+@Document(collection = "Employee")
 public class Employee {
 
     @Id

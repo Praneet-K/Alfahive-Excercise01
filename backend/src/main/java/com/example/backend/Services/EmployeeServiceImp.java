@@ -42,8 +42,12 @@ public class EmployeeServiceImp implements EmployeeService{
         catch(EmailIdException e){
             return new ResponseEntity<String>("Invalid emailId", HttpStatus.BAD_REQUEST);
         }
-
-        this.employeeRepository.save(employee);
+        try{
+            this.employeeRepository.save(employee);
+        }
+        catch(Exception e){
+            return new ResponseEntity<String>("Cannot acess Database", HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>("requestprocessed",HttpStatus.OK);
     }
     public static boolean isValidEmail(String email)
