@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool: 
-  vmImage: Self hosted test
+  Self hosted test
 
 steps:
 - task: NodeTool@0
