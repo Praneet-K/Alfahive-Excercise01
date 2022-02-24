@@ -77,13 +77,14 @@ class Form extends Component {
     
     fetch(url,options)
         .then(response => response.text()).then((data) =>{
+            alert(data)
             this.setState({
                 msg:data,
             })
         }).catch(error => {
-            console.log(error)
+            alert(error.message)
             this.setState({
-                msg : 'Server Error',
+                msg : error.message,
             })
         })
         // alert(`Hi ${this.state.firstName} ${this.state.lastName} is added`)        

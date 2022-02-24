@@ -27,7 +27,7 @@ public class EmployeeController {
     }
 
     @PostMapping("saveemp")
-    public ResponseEntity<String> saveEmployee(@RequestBody Employee employee){
+    public ResponseEntity<String> saveEmployee(@RequestBody Employee employee) throws Exception{
         System.out.println(employee);
         return this.employeeService.saveEmployee(employee);
     }

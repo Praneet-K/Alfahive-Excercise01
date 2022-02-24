@@ -33,15 +33,15 @@ public class EmployeeServiceTest {
     }
     
     @Test
-    void testSaveEmployee_EmailValidation() {
-        ResponseEntity<String> expectedResult = new ResponseEntity<String>("Invalid emailId", HttpStatus.BAD_REQUEST);
+    void testSaveEmployee_EmailValidation() throws Exception {
+        ResponseEntity<String> expectedResult = new ResponseEntity<String>("Invalid Email", HttpStatus.BAD_REQUEST);
         Employee employee = new Employee((long) 123, "firstName", "lastName", "phno", "emailId", "address", "city", "state", "country");
         ResponseEntity<String> actualResult = testObj.saveEmployee(employee);
         assertEquals(expectedResult, actualResult);
     }
 
     @Test
-    void testSaveEmployee_NullFirstName(){
+    void testSaveEmployee_NullFirstName() throws Exception{
         ResponseEntity<String> expectedResult = new ResponseEntity<String>("First cannot be null", HttpStatus.BAD_REQUEST);
         Employee employee = new Employee((long) 123, "", "lastName", "phno", "emailId@gmail.com", "address", "city", "state", "country");
         ResponseEntity<String> actualResult = testObj.saveEmployee(employee);
@@ -49,7 +49,7 @@ public class EmployeeServiceTest {
     }
 
     @Test
-    void testSaveEmployee_Sucess(){
+    void testSaveEmployee_Sucess() throws Exception{
         Employee employee = new Employee((long) 100, "firstName", null, "phno", "emailId@sastra.ac.in", "address", "city", "state", "country");
         when(employeeRepository.save(employee)).thenReturn(employee);
         assertEquals(HttpStatus.OK, testObj.saveEmployee(employee).getStatusCode());

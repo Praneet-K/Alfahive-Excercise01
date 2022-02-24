@@ -3,6 +3,7 @@ package com.example.backend.Services;
 import java.util.List;
 import java.util.regex.Pattern;
 
+// import com.example.backend.Exceptions.EmailException;
 import com.example.backend.Model.Employee;
 import com.example.backend.Repositories.EmployeeRepository;
 
@@ -22,8 +23,8 @@ public class EmployeeServiceImp implements EmployeeService{
     }
 
     @Override
-    public ResponseEntity<String> saveEmployee(Employee employee) {
-        if(employee.getId()==null)
+    public ResponseEntity<String> saveEmployee(Employee employee) throws Exception{
+        if(employee.getId()==null||employee.getId()==0)
             return new ResponseEntity<String>("Id cannot be null", HttpStatus.BAD_REQUEST);
         if((employee.getFirstName()==null)||(employee.getFirstName()==""))
             return new ResponseEntity<String>("First cannot be null", HttpStatus.BAD_REQUEST);
@@ -34,13 +35,10 @@ public class EmployeeServiceImp implements EmployeeService{
         if(employee.getAddress()==null)
             return new ResponseEntity<String>("Address cannot be null", HttpStatus.BAD_REQUEST);
         String email = employee.getEmailId();
-        try{
-            if(!isValidEmail(email)){
-                throw new EmailIdException();
-            }
-        }
-        catch(EmailIdException e){
-            return new ResponseEntity<String>("Invalid emailId", HttpStatus.BAD_REQUEST);
+        if(!isValidEmail(email)){
+            // throw new EmailIdException();
+            return new ResponseEntity<String>("Invalid Email", HttpStatus.BAD_REQUEST);
+            // throw new EmailException("invalid Email Id");
         }
         try{
             this.employeeRepository.save(employee);
@@ -62,15 +60,4 @@ public class EmployeeServiceImp implements EmployeeService{
         return pat.matcher(email).matches();
     }
     
-}
-class EmailIdException extends Exception{
-    EmailIdException(){
-        super();
-    }
-
-    @Override
-    public String toString() {
-        return "Email Id is invalid";
-    }
-
 }

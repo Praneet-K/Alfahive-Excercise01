@@ -9,5 +9,5 @@ import org.springframework.http.ResponseEntity;
 
 public interface EmployeeService {
     public List<Employee> getEmployees();
-    public ResponseEntity<String> saveEmployee(Employee employee);
+    public ResponseEntity<String> saveEmployee(Employee employee) throws Exception;
 }
