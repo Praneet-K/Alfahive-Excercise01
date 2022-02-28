@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: Mypool
+pool: Default
 
 steps:
 - task: NodeTool@0
