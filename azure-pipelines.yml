@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: Self hosted test
+pool: Mypool
 
 steps:
 - task: NodeTool@0
