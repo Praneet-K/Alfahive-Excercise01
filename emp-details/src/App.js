@@ -13,7 +13,25 @@ class App extends Component{
     };
   }
   handleCallBack = (x) =>{
+<<<<<<< HEAD
     
+=======
+    var url = "http://localhost:8080/api/saveemp";
+    // headers.append({'Content-Type' : 'application/json'})
+    const options = {method:'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: x.id,firstName : x.FirstName,
+      lastName:x.LastName,
+      phno:x.Phno,
+      address:x.Address,
+      city:x.City,
+      state:x.State,
+      country:x.Country}),
+    }
+    fetch(url,options)
+        .then(response => console.log(response))
+    // window.location.reload(false)
+>>>>>>> parent of 4834773 (added service layer)
   }
   render(){
     return (

@@ -7,6 +7,7 @@ class Form extends Component {
     
         this.state = {
              id:0,
+<<<<<<< HEAD
              firstName : '',
              lastName:'',
              phoneNumber : '',
@@ -16,6 +17,15 @@ class Form extends Component {
              state: '',
              country : '',
              msg : '',
+=======
+             FirstName : '',
+             LastName:'',
+             Phno : '',
+             Address:'',
+             City : '',
+             State: '',
+             Country : '',
+>>>>>>> parent of 4834773 (added service layer)
         };
     }
     handleCallBack = (y,x) => {
@@ -24,36 +34,32 @@ class Form extends Component {
                 id:x,
             });
             break;
-            case 'firstName' : this.setState({
-                            firstName : x,
+            case 'FirstName' : this.setState({
+                            FirstName : x,
                         });
                         break;
-            case 'lastName' : this.setState({
-                                    lastName : x,
+            case 'LastName' : this.setState({
+                                    LastName : x,
                                 });
                                 break;
-            case 'phoneNumber' : this.setState({
-                                phoneNumber : x,
+            case 'Phno' : this.setState({
+                                Phno : x,
                                 });
                                 break;
-            case 'emailId'  : this.setState({
-                                emailId : x,
+            case 'Address' : this.setState({
+                                Address : x,
                                 });
                                 break;
-            case 'address' : this.setState({
-                                address : x,
-                                });
-                                break;
-            case 'city' : this.setState({
-                                city : x,
+            case 'City' : this.setState({
+                                City : x,
                         });
                         break;
-            case 'state': this.setState({
-                                state : x,
+            case 'State': this.setState({
+                                State : x,
                         });
                         break;
-            case 'country' : this.setState({
-                            country : x,
+            case 'Country' : this.setState({
+                            Country : x,
                         });
                         break;
             default : break;
@@ -86,7 +92,14 @@ class Form extends Component {
                 msg : 'Server Error',
             })
         })
+<<<<<<< HEAD
         // alert(`Hi ${this.state.firstName} ${this.state.lastName} is added`)        
+=======
+        alert(`Hi ${this.state.FirstName} ${this.state.LastName} is added`)
+
+        this.props.parentCallBack(this.state)
+        
+>>>>>>> parent of 4834773 (added service layer)
         event.preventDefault()
     }
     render() {
@@ -97,15 +110,14 @@ class Form extends Component {
                     <legend>Employee Details</legend>
                     <table className='text-center table'>
                         <tbody>
-                            <InputRow item = 'Id' type = 'number' required = 'true' parentCallBack={this.handleCallBack}/>
-                            <InputRow item = 'firstName' type = 'text' required = 'true' parentCallBack={this.handleCallBack}/>
-                            <InputRow item = 'lastName' type = 'text' required = 'false' parentCallBack={this.handleCallBack} />
-                            <InputRow item = 'phoneNumber' type = 'text' required = 'true' parentCallBack={this.handleCallBack}/>
-                            <InputRow item = 'emailId' type = 'email' required = 'true' parentCallBack={this.handleCallBack}/>
-                            <InputRow item = 'address' type = 'text' required = 'true' parentCallBack={this.handleCallBack}/>
-                            <InputRow item = 'city' type = 'text' required = 'flase' parentCallBack={this.handleCallBack}/>
-                            <InputRow item = 'state' type = 'text' required = 'flase' parentCallBack={this.handleCallBack}/>
-                            <InputRow item = 'country' type = 'text' required = 'false' parentCallBack={this.handleCallBack}/>
+                            <InputRow item = 'Id' type = 'number' parentCallBack={this.handleCallBack}/>
+                            <InputRow item = 'FirstName' type = 'text' parentCallBack={this.handleCallBack}/>
+                            <InputRow item = 'LastName' type = 'text' parentCallBack={this.handleCallBack} />
+                            <InputRow item = 'Phno' type = 'text' parentCallBack={this.handleCallBack}/>
+                            <InputRow item = 'Address' type = 'text' parentCallBack={this.handleCallBack}/>
+                            <InputRow item = 'City' type = 'text' parentCallBack={this.handleCallBack}/>
+                            <InputRow item = 'State' type = 'text' parentCallBack={this.handleCallBack}/>
+                            <InputRow item = 'Country' type = 'text' parentCallBack={this.handleCallBack}/>
                         </tbody>
                     </table>
                 </fieldset>
