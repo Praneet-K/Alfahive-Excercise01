@@ -2,19 +2,13 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
-trigger:
-- main
-
-pool: Mypool
-
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'backend/pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    name: Mypool
+  steps:
+  - checkout: self
+  - task: Maven@3
+    displayName: Maven pom.xml
+...
