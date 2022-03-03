@@ -6,7 +6,7 @@ jobs:
 - job: Job_1
   displayName: Agent job 1
   pool:
-    name: Mypool
+    name: Default
   steps:
   - checkout: self
   - task: Maven@3
